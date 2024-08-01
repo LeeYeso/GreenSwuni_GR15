@@ -102,7 +102,8 @@ class HomeFragment : Fragment() {
     }
 
     private fun displayDaysSinceLastLogin(days: Long) {
-        binding.startDayTv.text = "우리의 여정 +$days 일째"
+        val daysWithOffset = days + 1
+        binding.startDayTv.text = "우리의 여정 +$daysWithOffset 일째"
     }
 
     override fun onDestroyView() {
