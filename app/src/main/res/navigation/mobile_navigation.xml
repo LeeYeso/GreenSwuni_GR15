@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--suppress NavigationFile -->
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -21,9 +22,13 @@
 
     <fragment
         android:id="@+id/navigation_chellenge"
-        android:name="com.example.greenswuniex.ChellengeFragment"
+        android:name="com.example.greenswuniex.ChallengeCategoryFragment"
         android:label="도전하슈"
-        tools:layout="@layout/fragment_chellenge" />
+        tools:layout="@layout/fragment_challenge_category" >
+        <action
+            android:id="@+id/action_challengeCategory_to_challengeSelect"
+            app:destination="@+id/challengeSelectFragment"/>
+    </fragment>
 
     <fragment
         android:id="@+id/navigation_search"
@@ -51,5 +56,18 @@
             android:id="@+id/action_individual_to_setting"
             app:destination="@+id/navigation_setting"/>
 
+    </fragment>
+
+    <fragment
+        android:id="@+id/challengeSelectFragment"
+        android:name="com.example.greenswuniex.ChallengeSelectFragment"
+        android:label="challengeSelectFragment"
+        tools:layout="@layout/fragment_challenge_select">
+        <action
+            android:id="@+id/action_challengeSelect_to_challengeCategory"
+            app:destination="@+id/navigation_chellenge"/>
+        <argument
+            android:name="argCategory"
+            app:argType="string" />
     </fragment>
 </navigation>

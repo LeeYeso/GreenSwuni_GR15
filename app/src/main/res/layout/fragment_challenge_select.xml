@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <ImageButton
+        android:id="@+id/challenge_back_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="30dp"
+        android:adjustViewBounds="true"
+        android:background="@android:color/transparent"
+        android:scaleType="fitCenter"
+        android:src="@drawable/back_arrow"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="35dp"
+        android:fontFamily="@font/nanum_gothic_bold"
+        android:text="원하는 도전을 선택하세요"
+        android:textColor="@color/black"
+        android:textSize="24dp" />
+
+    <Button
+        android:id="@+id/challenge_btn1"
+        android:layout_width="325dp"
+        android:layout_height="65dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="35dp"
+        android:shadowRadius="0"
+        android:stateListAnimator="@null"
+        android:background="@drawable/round_button_orange"
+        android:textSize="15dp"
+        android:textColor="@color/black"
+        android:fontFamily="@font/nanum_gothic_bold"/>
+
+    <Button
+        android:id="@+id/challenge_btn2"
+        android:layout_width="325dp"
+        android:layout_height="65dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="25dp"
+        android:shadowRadius="0"
+        android:stateListAnimator="@null"
+        android:background="@drawable/round_button_orange"
+        android:textSize="15dp"
+        android:textColor="@color/black"
+        android:fontFamily="@font/nanum_gothic_bold"/>
+
+    <Button
+        android:id="@+id/challenge_btn3"
+        android:layout_width="325dp"
+        android:layout_height="65dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="25dp"
+        android:shadowRadius="0"
+        android:stateListAnimator="@null"
+        android:background="@drawable/round_button_orange"
+        android:fontFamily="@font/nanum_gothic_bold"
+        android:textColor="@color/black"
+        android:textSize="15dp" />
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="25dp">
+
+        <Button
+            android:id="@+id/challenge_btn4"
+            android:layout_width="325dp"
+            android:layout_height="65dp"
+            android:layout_gravity="center"
+            android:shadowRadius="0"
+            android:stateListAnimator="@null"
+            android:background="@drawable/round_button_orange"
+            android:textSize="15dp"
+            android:textColor="#000000"
+            android:fontFamily="@font/nanum_gothic_bold" />
+
+        <Button
+            android:id="@+id/challenge_start_btn"
+            android:layout_width="85dp"
+            android:layout_height="50dp"
+            android:layout_alignRight="@+id/challenge_btn4"
+            android:layout_below="@+id/challenge_btn4"
+            android:layout_marginTop="25dp"
+            android:background="@drawable/round_button"
+            android:backgroundTint="@color/green_500"
+            android:text="시작"
+            android:textSize="16dp"
+            android:textColor="#ffffff"
+            android:fontFamily="@font/nanum_gothic_bold"/>
+
+    </RelativeLayout>
+</LinearLayout>
