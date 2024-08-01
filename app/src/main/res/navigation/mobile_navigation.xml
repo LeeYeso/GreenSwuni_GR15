@@ -24,8 +24,8 @@
         android:id="@+id/navigation_chellenge"
         android:name="com.example.greenswuniex.ChellengeFragment"
         android:label="도전하슈"
-        tools:layout="@layout/fragment_chellenge" >
-    </fragment>
+        tools:layout="@layout/fragment_chellenge" />
+
 
     <fragment
         android:id="@+id/navigation_search"
