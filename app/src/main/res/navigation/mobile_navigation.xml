@@ -22,12 +22,9 @@
 
     <fragment
         android:id="@+id/navigation_chellenge"
-        android:name="com.example.greenswuniex.ChallengeCategoryFragment"
+        android:name="com.example.greenswuniex.ChellengeFragment"
         android:label="도전하슈"
-        tools:layout="@layout/fragment_challenge_category" >
-        <action
-            android:id="@+id/action_challengeCategory_to_challengeSelect"
-            app:destination="@+id/challengeSelectFragment"/>
+        tools:layout="@layout/fragment_chellenge" >
     </fragment>
 
     <fragment
@@ -59,13 +56,23 @@
     </fragment>
 
     <fragment
+        android:id="@+id/chellengeCategoryFragment"
+        android:name="com.example.greenswuniex.ChallengeCategoryFragment"
+        android:label="도전하슈"
+        tools:layout="@layout/fragment_challenge_category" >
+        <action
+            android:id="@+id/action_challengeCategory_to_challengeSelect"
+            app:destination="@+id/challengeSelectFragment"/>
+    </fragment>
+
+    <fragment
         android:id="@+id/challengeSelectFragment"
         android:name="com.example.greenswuniex.ChallengeSelectFragment"
         android:label="challengeSelectFragment"
         tools:layout="@layout/fragment_challenge_select">
         <action
             android:id="@+id/action_challengeSelect_to_challengeCategory"
-            app:destination="@+id/navigation_chellenge"/>
+            app:destination="@+id/chellengeCategoryFragment"/>
         <argument
             android:name="argCategory"
             app:argType="string" />
