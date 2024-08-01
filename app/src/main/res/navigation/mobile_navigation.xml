@@ -58,7 +58,7 @@
     <fragment
         android:id="@+id/chellengeCategoryFragment"
         android:name="com.example.greenswuniex.ChallengeCategoryFragment"
-        android:label="도전하슈"
+        android:label="challengeCategoryFragment"
         tools:layout="@layout/fragment_challenge_category" >
         <action
             android:id="@+id/action_challengeCategory_to_challengeSelect"
