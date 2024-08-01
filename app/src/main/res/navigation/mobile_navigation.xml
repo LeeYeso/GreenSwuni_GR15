@@ -24,7 +24,11 @@
         android:id="@+id/navigation_chellenge"
         android:name="com.example.greenswuniex.ChellengeFragment"
         android:label="도전하슈"
-        tools:layout="@layout/fragment_chellenge" />
+        tools:layout="@layout/fragment_chellenge" >
+        <action
+            android:id="@+id/action_navigation_chellenge_to_challenge_calender"
+            app:destination="@id/challenge_calender" />
+    </fragment>
 
 
     <fragment
@@ -54,15 +58,29 @@
             app:destination="@+id/navigation_setting"/>
 
     </fragment>
+    <fragment
+        android:id="@+id/challenge_calender"
+        android:name="com.example.greenswuniex.ChallengeCalenderFragment"
+        android:label="challenge_calender"
+        tools:layout="@layout/fragment_challenge_calender"
+
+        >
+        <action
+            android:id="@+id/action_challenge_calender_to_chellengeCategoryFragment"
+            app:destination="@id/chellengeCategoryFragment" />
+    </fragment>
 
     <fragment
         android:id="@+id/chellengeCategoryFragment"
         android:name="com.example.greenswuniex.ChallengeCategoryFragment"
-        android:label="challengeCategoryFragment"
+        android:label="도전하슈"
         tools:layout="@layout/fragment_challenge_category" >
         <action
             android:id="@+id/action_challengeCategory_to_challengeSelect"
             app:destination="@+id/challengeSelectFragment"/>
+        <action
+            android:id="@+id/action_chellengeCategoryFragment_to_challengeSelectFragment"
+            app:destination="@id/challengeSelectFragment" />
     </fragment>
 
     <fragment

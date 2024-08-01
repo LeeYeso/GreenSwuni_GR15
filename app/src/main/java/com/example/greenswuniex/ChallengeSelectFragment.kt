@@ -9,6 +9,9 @@ import androidx.appcompat.widget.AppCompatImageButton
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
+import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.firestore.LoadBundleTask
 
 
 class ChallengeSelectFragment : Fragment() {
@@ -19,7 +22,14 @@ class ChallengeSelectFragment : Fragment() {
     lateinit var Btn4: Button
     lateinit var startBtn: Button
 
+    //DB
+    private lateinit var firestore: FirebaseFirestore
+    private lateinit var selectedTask: String
+
+
     private val args : ChallengeSelectFragmentArgs by navArgs()
+
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -81,9 +91,17 @@ class ChallengeSelectFragment : Fragment() {
             }
         }
 
+
         backBtn.setOnClickListener {
             findNavController().navigate(R.id.action_challengeSelect_to_challengeCategory)
         }
+        startBtn.setOnClickListener {
+            //시작버튼 누르면 챌린지 저장
+           // saveTaskAndNavigate()
+        }
         return view
     }
-}
+    //버튼 눌러서 챌린지 저장
+
+    }
+

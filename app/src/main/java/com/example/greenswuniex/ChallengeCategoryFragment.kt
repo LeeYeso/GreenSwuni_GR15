@@ -8,6 +8,9 @@ import android.view.ViewGroup
 import android.widget.Button
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
+import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.example.greenswuniex.databinding.FragmentChallengeCategoryBinding
+import androidx.navigation.fragment.findNavController
 
 class ChallengeCategoryFragment : Fragment() {
 
@@ -15,6 +18,7 @@ class ChallengeCategoryFragment : Fragment() {
     lateinit var mealBtn : Button
     lateinit var digitalBtn : Button
     lateinit var moveBtn : Button
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,

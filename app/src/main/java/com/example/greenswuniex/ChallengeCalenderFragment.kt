@@ -29,10 +29,10 @@ class ChallengeCalenderFragment : Fragment() {
         //버틑 클릭 시 챌린지 선택으로 이동
         btncalender = view.findViewById(R.id.btncalender)
 
-        /*btncalender.setOnClickListener {
-            findNavController().navigate(R.id.Challenge_Category)
+        btncalender.setOnClickListener {
+            findNavController().navigate(R.id.action_challenge_calender_to_chellengeCategoryFragment)
 
-        }*/
+        }
         return view
 
 
