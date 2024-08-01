@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center_horizontal">
+
+    <TextView
+        android:id="@+id/welcome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="150dp"
+        android:fontFamily="@font/nanum_gothic_bold"
+        android:text="회원가입 성공!"
+        android:textColor="#000000"
+        android:textSize="24sp" />
+
+    <TextView
+        android:id="@+id/welcome_coment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:gravity="center_horizontal|center_vertical"
+        android:text="이제부터 그린슈니와 함께\n환경을 위한 발걸음을 내딛어 보아요."
+        android:textAppearance="@style/TextAppearance.CustomButton.Green" />
+
+    <View
+        android:layout_width="210dp"
+        android:layout_height="210dp"
+        android:background="#E6E6E6"
+        android:layout_marginTop="40dp" />
+
+    <Button
+        android:id="@+id/start_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/green_button"
+        android:layout_marginTop="63dp"
+        android:text="로그인하기"
+        android:textAppearance="@style/TextAppearance.CustomButton" />
+
+</LinearLayout>

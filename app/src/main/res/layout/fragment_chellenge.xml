@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center_horizontal">
+
+    <!-- 초기 화면 레이아웃을 정의 -->
+    <LinearLayout
+        android:id="@+id/initial_screen"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center_horizontal">
+
+        <ImageView
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_marginTop="120dp"
+            android:src="@drawable/level1"
+            android:layout_marginBottom="40dp"/>
+
+        <TextView
+            android:id="@+id/welcome"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:fontFamily="@font/nanum_gothic_bold"
+            android:text="도전하슈는 일정 기간동안 탄소 발자국을 \n줄이는 습관을 꾸준히 참여해 그린슈머가\n될 수 있도록 하는 프로젝트에요!"
+            android:textColor="@color/green_700"
+            android:textSize="18dp" />
+
+        <TextView
+            android:id="@+id/chellenge_comment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:fontFamily="@font/nanum_gothic_bold"
+            android:text="새로운 도전을 시작해볼까요?"
+            android:textColor="#000000"
+            android:textSize="24dp" />
+
+        <Button
+            android:id="@+id/chellenge_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="100dp"
+            android:background="@drawable/green_button"
+            android:fontFamily="@font/nanum_gothic_bold"
+            android:text="도전하슈"
+            android:textAppearance="@style/TextAppearance.CustomButton" />
+    </LinearLayout>
+
+    <!-- 지도 레이아웃 숨김 -->
+    <FrameLayout
+        android:id="@+id/map_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone" />
+
+</LinearLayout>

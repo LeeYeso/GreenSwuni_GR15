@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/navigation_home"
+        android:icon="@drawable/nav_home"
+        android:title="홈" />
+
+    <item
+        android:id="@+id/navigation_chellenge"
+        android:icon="@drawable/nav_chellenge"
+        android:title="도전하슈" />
+
+    <item
+        android:id="@+id/navigation_search"
+        android:icon="@drawable/nav_search"
+        android:title="찾아보슈" />
+
+    <item
+        android:id="@+id/navigation_setting"
+        android:icon="@drawable/nav_setting"
+        android:title="설정" />
+
+</menu>

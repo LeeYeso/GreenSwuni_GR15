@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "552862795757",
+    "firebase_url": "https://greenswuniex-default-rtdb.firebaseio.com",
+    "project_id": "greenswuniex",
+    "storage_bucket": "greenswuniex.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:552862795757:android:88fdeaeba5b782586009e4",
+        "android_client_info": {
+          "package_name": "com.example.greenswuniex"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAj6sKgExVxO96GZXYHa7z9wiwSV4BQXvU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

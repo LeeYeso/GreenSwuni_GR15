@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">GreenSwuniex</string>
+    <!-- 기본 텍스트 스타일: 나눔고딕 볼드 16 흰색-->
+    <style name="TextAppearance.CustomButton" parent="TextAppearance.AppCompat">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@android:color/white</item>
+        <item name="fontFamily">@font/nanum_gothic_bold</item>
+    </style>
+    <!--같은버전 연두색-->
+    <style name="TextAppearance.CustomButton.Green" parent="TextAppearance.AppCompat">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/green_500</item>
+        <item name="fontFamily">@font/nanum_gothic_bold</item>
+    </style>
+    <!--일반 버전 검은색-->
+    <style name="TextAppearance.CustomButton.Black" parent="TextAppearance.AppCompat">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="fontFamily">@font/nanum_gothic</item>
+    </style>
+</resources>
+

@@ -1,0 +1,22 @@
+<vector android:height="89.94083dp" android:viewportHeight="190"
+    android:viewportWidth="169" android:width="80dp" xmlns:android="http://schemas.android.com/apk/res/android">
+    <path android:fillColor="#424242"
+        android:pathData="M83.5,83.5m-83.5,0a83.5,83.5 0,1 1,167 0a83.5,83.5 0,1 1,-167 0" android:strokeWidth="0"/>
+    <path android:fillColor="#faf3e1"
+        android:pathData="M83.5,83.5m-83,0a83,83 0,1 1,166 0a83,83 0,1 1,-166 0" android:strokeWidth="0"/>
+    <path android:fillColor="#fff"
+        android:pathData="M83.5,1c45.49,0 82.5,37.01 82.5,82.5s-37.01,82.5 -82.5,82.5S1,128.99 1,83.5 38.01,1 83.5,1M83.5,0C37.38,0 0,37.38 0,83.5s37.38,83.5 83.5,83.5 83.5,-37.38 83.5,-83.5S129.62,0 83.5,0h0Z" android:strokeWidth="0"/>
+    <group>
+        <clip-path android:pathData="M83.5,83.5m-83.5,0a83.5,83.5 0,1 1,167 0a83.5,83.5 0,1 1,-167 0"/>
+        <path android:fillColor="#78b1ea"
+            android:pathData="M2,112a83.5,78 0,1 0,167 0a83.5,78 0,1 0,-167 0z" android:strokeWidth="0"/>
+        <path android:fillColor="#829d3f"
+            android:pathData="M51,106.67c5.65,-5.06 5.6,-16.73 1,-24.22 -6.98,-11.38 -23.5,-11.56 -29,-11.63 -1.47,-0.02 -4.69,0.01 -8.79,0.56 -7.74,11.83 -12.21,25.74 -12.21,40.62 0,12.66 3.25,24.61 8.98,35.18 13.34,0.34 24.73,-5.87 26.02,-6.6 10.13,-5.75 19.57,-16.76 17,-22.29 -2.13,-4.58 -12.06,-4.37 -12,-6.78 0.04,-1.76 5.33,-1.56 9,-4.84Z" android:strokeWidth="0"/>
+        <path android:fillColor="#abc270"
+            android:pathData="M169,112c0,-5.78 -0.69,-11.41 -1.97,-16.84 -8.92,-7.71 -23.3,-10.51 -35.03,-5.93 -8.79,3.43 -18.81,12.07 -18,20.35 0.66,6.71 7.86,7.41 9,15.5 0.79,5.62 -2.44,7.06 -5,18.41 -1.88,8.33 -2.82,12.5 -1,15.5 3.73,6.17 18.88,7.83 32.41,3.18 12.22,-13.56 19.59,-31.06 19.59,-50.17Z" android:strokeWidth="0"/>
+    </group>
+    <path android:fillColor="#232323"
+        android:pathData="M69,74.5a6,8.5 0,1 0,12 0a6,8.5 0,1 0,-12 0z" android:strokeWidth="0"/>
+    <path android:fillColor="#232323"
+        android:pathData="M89,74.5a6,8.5 0,1 0,12 0a6,8.5 0,1 0,-12 0z" android:strokeWidth="0"/>
+</vector>

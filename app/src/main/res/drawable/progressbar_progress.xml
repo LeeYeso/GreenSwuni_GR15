@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@android:id/progress">
+        <clip>
+            <shape android:shape="rectangle">
+                <corners android:radius="30dp" /> <!-- 모서리를 둥글게 -->
+                <solid android:color="@color/orange_500" /> <!-- 주황색 -->
+            </shape>
+        </clip>
+    </item>
+</layer-list>

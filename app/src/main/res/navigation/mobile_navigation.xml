@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/navigation_home">
+
+    <fragment
+        android:id="@+id/navigation_home"
+        android:name="com.example.greenswuniex.HomeFragment"
+        android:label="홈"
+        tools:layout="@layout/fragment_home">
+
+        <action
+            android:id="@+id/action_home_to_chellenge"
+            app:destination="@id/navigation_chellenge" />
+        <action
+            android:id="@+id/action_home_to_search"
+            app:destination="@id/navigation_search" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_chellenge"
+        android:name="com.example.greenswuniex.ChellengeFragment"
+        android:label="도전하슈"
+        tools:layout="@layout/fragment_chellenge" />
+
+    <fragment
+        android:id="@+id/navigation_search"
+        android:name="com.example.greenswuniex.SearchFragment"
+        android:label="찾아보슈"
+        tools:layout="@layout/fragment_search" />
+
+    <fragment
+        android:id="@+id/navigation_setting"
+        android:name="com.example.greenswuniex.SettingFragment"
+        android:label="설정"
+        tools:layout="@layout/fragment_setting" >
+
+        <action
+            android:id="@+id/action_setting_to_individual"
+            app:destination="@id/individualSettingFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/individualSettingFragment"
+        android:name="com.example.greenswuniex.SettingIndividualFragment"
+        android:label="Individual Setting"
+        tools:layout="@layout/setting_individual" >
+        <action
+            android:id="@+id/action_individual_to_setting"
+            app:destination="@+id/navigation_setting"/>
+
+    </fragment>
+</navigation>

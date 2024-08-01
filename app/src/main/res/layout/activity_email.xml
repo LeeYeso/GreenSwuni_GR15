@@ -1,0 +1,140 @@
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- 뒤로 가기 버튼 -->
+    <ImageButton
+        android:id="@+id/back_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        android:src="@drawable/arrow_back"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="15dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <!-- 제목 -->
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="12dp"
+        android:layout_marginTop="40dp"
+        android:fontFamily="@font/nanum_gothic_bold"
+        android:text="2차 인증"
+        android:textColor="#000000"
+        android:textSize="24sp"
+        app:layout_constraintLeft_toRightOf="@id/back_button"
+        app:layout_constraintTop_toBottomOf="@id/back_button" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/nanum_gothic"
+        android:text="서비스 이용을 위해 2차 인증을 해주세요.\n인증 완료 시 회원가입이 완료됩니다."
+        android:textColor="#707070"
+        android:textSize="12sp"
+        app:layout_constraintLeft_toLeftOf="@id/title"
+        app:layout_constraintTop_toBottomOf="@id/title"
+        android:layout_marginTop="8dp" />
+
+    <TextView
+        android:id="@+id/email_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="80dp"
+        android:background="@drawable/edit_text"
+        android:text="이메일 주소"
+        android:minWidth="294dp"
+        android:minHeight="48dp"
+        android:padding="10dp"
+        android:textColor="#829D40"
+        android:gravity="center_vertical"
+        android:textSize="16sp"
+        app:layout_constraintLeft_toLeftOf="@id/title"
+        app:layout_constraintTop_toBottomOf="@id/title" />
+
+
+    <EditText
+        android:id="@+id/major"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="140dp"
+        android:background="@drawable/edit_text"
+        android:hint="학과"
+        android:minWidth="294dp"
+        android:minHeight="48dp"
+        android:padding="10dp"
+        android:textColor="#000000"
+        app:layout_constraintLeft_toLeftOf="@id/title"
+        app:layout_constraintTop_toBottomOf="@id/title" />
+
+    <EditText
+        android:id="@+id/student"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="200dp"
+        android:background="@drawable/edit_text"
+        android:hint="학번"
+        android:minWidth="294dp"
+        android:minHeight="48dp"
+        android:padding="10dp"
+        android:textColor="#000000"
+        app:layout_constraintLeft_toLeftOf="@id/title"
+        app:layout_constraintTop_toBottomOf="@id/title" />
+
+    <Button
+        android:id="@+id/verify_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="290dp"
+        android:background="@drawable/green_button"
+        android:minWidth="294dp"
+        android:padding="10dp"
+        android:text="확인"
+        android:textAppearance="@style/TextAppearance.CustomButton"
+        app:layout_constraintLeft_toLeftOf="@id/title"
+        app:layout_constraintTop_toBottomOf="@id/title" />
+
+
+    <LinearLayout
+        android:id="@+id/verify_fail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/pop_up_box"
+        android:orientation="vertical"
+        android:padding="24dp"
+        android:gravity="center_horizontal"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:visibility="gone" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="인증 실패"
+            android:fontFamily="@font/nanum_gothic"
+            android:gravity="center_horizontal"
+            android:textSize="14dp"
+            android:layout_marginTop="24dp"
+            />
+        <Button
+            android:id="@+id/login_fail_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:background="@drawable/yellow_button"
+            android:text="확인"
+            android:textAppearance="@style/TextAppearance.CustomButton"/>
+
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
