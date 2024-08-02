@@ -27,7 +27,7 @@
         tools:layout="@layout/fragment_chellenge" >
         <action
             android:id="@+id/action_navigation_chellenge_to_challenge_calender"
-            app:destination="@id/challenge_calender" />
+            app:destination="@id/challengeCalenderFragment" />
     </fragment>
 
 
@@ -59,7 +59,7 @@
 
     </fragment>
     <fragment
-        android:id="@+id/challenge_calender"
+        android:id="@+id/challengeCalenderFragment"
         android:name="com.example.greenswuniex.ChallengeCalenderFragment"
         android:label="challenge_calender"
         tools:layout="@layout/fragment_challenge_calender"
@@ -81,6 +81,9 @@
         <action
             android:id="@+id/action_chellengeCategoryFragment_to_challengeSelectFragment"
             app:destination="@id/challengeSelectFragment" />
+        <action
+            android:id="@+id/action_challengeCategory_to_challengeCalender"
+            app:destination="@+id/challengeCalenderFragment"/>
     </fragment>
 
     <fragment

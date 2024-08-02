@@ -1,24 +1,22 @@
 package com.example.greenswuniex
 
-
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import androidx.appcompat.widget.AppCompatImageButton
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
-import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.example.greenswuniex.databinding.FragmentChallengeCategoryBinding
-import androidx.navigation.fragment.findNavController
 
 class ChallengeCategoryFragment : Fragment() {
 
-    lateinit var lifeBtn : Button
-    lateinit var mealBtn : Button
-    lateinit var digitalBtn : Button
-    lateinit var moveBtn : Button
-
+    lateinit var lifeBtn: Button
+    lateinit var mealBtn: Button
+    lateinit var digitalBtn: Button
+    lateinit var moveBtn: Button
+    lateinit var backBtn: AppCompatImageButton // 변경된 부분
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -30,7 +28,7 @@ class ChallengeCategoryFragment : Fragment() {
         mealBtn = view.findViewById(R.id.challenge_meal_btn)
         digitalBtn = view.findViewById(R.id.challenge_digital_btn)
         moveBtn = view.findViewById(R.id.challenge_move_btn)
-
+        backBtn = view.findViewById(R.id.challenge_back_btn) // 변경된 부분
 
         lifeBtn.setOnClickListener {
             val argString = lifeBtn.text.toString()
@@ -51,6 +49,10 @@ class ChallengeCategoryFragment : Fragment() {
             val argString = moveBtn.text.toString()
             val action = ChallengeCategoryFragmentDirections.actionChallengeCategoryToChallengeSelect(argString)
             findNavController().navigate(action)
+        }
+
+        backBtn.setOnClickListener {
+            findNavController().navigate(R.id.action_challengeCategory_to_challengeCalender)
         }
 
         return view
