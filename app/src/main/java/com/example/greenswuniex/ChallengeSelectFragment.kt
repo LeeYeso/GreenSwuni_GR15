@@ -42,10 +42,13 @@ class ChallengeSelectFragment : Fragment() {
 
         binding.challengeStartBtn.setOnClickListener {
             if (selectedButton != null) {
-                // 챌린지를 저장하고 다음 화면으로 이동
-                // saveTaskAndNavigate()
+                val selectedDetail = selectedButton?.text.toString()
+                val bundle = Bundle().apply {
+                    putString("selectedCategory", argString)
+                    putString("selectedDetail", selectedDetail)
+                }
+                findNavController().navigate(R.id.action_challengeSelect_to_challengeCalender, bundle)
             } else {
-                // 카테고리를 선택하지 않았을 때 경고 대화창 표시
                 showConfirmDialog()
             }
         }

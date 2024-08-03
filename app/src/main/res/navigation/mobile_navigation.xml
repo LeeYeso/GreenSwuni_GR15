@@ -98,7 +98,7 @@
             android:name="argCategory"
             app:argType="string" />
         <action
-            android:id="@+id/action_challengeSelectFragment_to_challenge_calender"
+            android:id="@+id/action_challengeSelect_to_challengeCalender"
             app:destination="@id/challengeCalenderFragment" />
     </fragment>
 </navigation>
