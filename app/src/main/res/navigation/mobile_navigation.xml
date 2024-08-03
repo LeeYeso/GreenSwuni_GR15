@@ -35,7 +35,18 @@
         android:id="@+id/navigation_search"
         android:name="com.example.greenswuniex.SearchFragment"
         android:label="찾아보슈"
-        tools:layout="@layout/fragment_search" />
+        tools:layout="@layout/fragment_search">
+        <action
+            android:id="@+id/action_searchFragment_to_mapFragment"
+            app:destination="@id/mapFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/mapFragment"
+        android:name="com.example.greenswuniex.MapFragment"
+        android:label="map_fragment"
+        tools:layout="@layout/fragment_map">
+    </fragment>
 
     <fragment
         android:id="@+id/navigation_setting"
@@ -98,7 +109,7 @@
             android:name="argCategory"
             app:argType="string" />
         <action
-            android:id="@+id/action_challengeSelectFragment_to_challenge_calender"
+            android:id="@+id/action_challengeSelect_to_challengeCalender"
             app:destination="@id/challengeCalenderFragment" />
     </fragment>
 </navigation>

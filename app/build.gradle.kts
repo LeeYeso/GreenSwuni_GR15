@@ -65,8 +65,19 @@ dependencies {
     // 네이버 지도 SDK
     implementation("com.naver.maps:map-sdk:3.19.0")
 
+    // 구글 지도
+    implementation("com.google.android.gms:play-services-location:21.0.1")
+
+    //json파일 읽기
+    implementation ("com.google.code.gson:gson:2.8.8")
+
+    implementation ("com.squareup.retrofit2:retrofit:2.9.0")
+    implementation ("com.squareup.retrofit2:converter-gson:2.9.0")
+
     //프래그먼트간 arg값 전달
     implementation("androidx.navigation:navigation-fragment-ktx:2.7.7")
     implementation("androidx.navigation:navigation-ui-ktx:2.7.7")
+
+    implementation( "androidx.recyclerview:recyclerview:1.2.1")
 
 }
