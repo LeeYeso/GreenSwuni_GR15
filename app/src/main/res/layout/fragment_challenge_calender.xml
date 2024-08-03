@@ -5,6 +5,7 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:gravity="center_horizontal"
+
     >
 
     <TextView
@@ -21,31 +22,52 @@
         />
 
 
-
     <com.prolificinteractive.materialcalendarview.MaterialCalendarView
-        android:layout_width="360dp"
-        android:layout_height="360dp"
+        android:id="@+id/calenderView"
+        android:layout_width="353dp"
+        android:layout_height="293dp"
         android:theme="@style/CalenderViewCustom"
         app:mcv_dateTextAppearance="@style/CalenderViewDateCustomText"
         app:mcv_headerTextAppearance="@style/CalendarWidgetHeader"
         app:mcv_selectionColor="@color/gray_500"
-        app:mcv_showOtherDates="all"
+        app:mcv_showOtherDates="out_of_range"
         app:mcv_weekDayTextAppearance="@style/CalenderViewWeekCustomText"
 
+
+
         />
-
-
 
     <Button
         android:id="@+id/btncalender"
         android:layout_width="40dp"
         android:layout_height="40dp"
-        android:layout_marginTop="25dp"
         android:layout_gravity="right"
+        android:layout_marginTop="25dp"
         android:layout_marginRight="30dp"
         android:background="@drawable/round_button"
         android:backgroundTint="#ABC270"
         android:text="+"
         android:textColor="@android:color/white" />
+
+    <LinearLayout
+        android:id="@+id/task_list"
+        android:layout_width="match_parent"
+        android:layout_height="36dp"
+        android:layout_marginTop="16dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/todaysTask"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="오늘의 챌린지"
+            android:gravity="center"
+            />
+    </LinearLayout>
+
+
+
+
+
 
 </LinearLayout>
