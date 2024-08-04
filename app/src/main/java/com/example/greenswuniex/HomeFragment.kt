@@ -6,6 +6,8 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ProgressBar
+import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -19,9 +21,10 @@ private lateinit var recyclerView: RecyclerView
 private lateinit var adapter: ChallengeListAdapter
 private lateinit var itemList: MutableList<ChallengeListItem>
 
+
 class HomeFragment : Fragment() {
 
-    private var _binding: FragmentHomeBinding? = null
+    private var _binding: FragmentHomeBinding?=null
     private val binding get() = _binding!!
 
     private lateinit var auth: FirebaseAuth
@@ -46,8 +49,21 @@ class HomeFragment : Fragment() {
         itemList = ChallengeCalenderFragment.loadItemListFromSharedPreferences(requireContext())
 
         // 어댑터 생성 및 RecyclerView에 설정
-        adapter = ChallengeListAdapter(requireContext(), itemList, isHomeFragment = true)
-        recyclerView.adapter = adapter
+        adapter = ChallengeListAdapter(
+            requireContext(),
+            itemList,
+            isHomeFragment = true
+        ) { checkedCount ->
+            updateProgressBarAndLevel(checkedCount) // 체크된 항목 수를 이용해 프로그래스 바와 레벨 업데이트
+        }
+        /*
+        adapter = ChallengeListAdapter(requireContext(), itemList, isHomeFragment = true){
+            updateProgressBarAndLevel() // 체크 상태 변경 시 프로그래스 바 업데이트
+        }*/
+        //추가된 부분
+        binding.recyclerView.layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
+        binding.recyclerView.adapter = adapter
+        //recyclerView.adapter = adapter
 
         // 버튼 클릭 리스너 설정
         binding.chellengeBtn.setOnClickListener {
@@ -59,6 +75,9 @@ class HomeFragment : Fragment() {
             startActivity(intent)
         }
 
+        // 날짜 초기화 확인 및 상태 초기화
+        ///checkAndResetChallengeSelection()
+
         // 사용자 데이터 불러오기 및 사용 일 수 계산
         val userEmail = auth.currentUser?.email
         if (userEmail != null) {
@@ -69,9 +88,54 @@ class HomeFragment : Fragment() {
             Log.e("HomeFragment", "User email is null")
         }
 
+// 초기 프로그래스 바 업데이트
+        updateProgressBarAndLevel(itemList.count { it.challenge_onCheck })
         return view
     }
 
+
+    //프로그래스 바
+    interface UpdateProgressListener {
+        fun updateProgressBarAndLevel(checkedCount: Int)
+    }
+    private fun updateProgressBarAndLevel(checkedCount: Int) {
+      //  val checkedCount = itemList.count { it.challenge_onCheck }
+        val progress = when {
+            checkedCount >= 30 -> 100
+            checkedCount >= 20 -> 75
+            checkedCount >= 10 -> 50
+            checkedCount >= 5 -> 25
+            else -> 0
+        }
+
+        // 프로그래스 바 업데이트
+        binding.customProgressBar.progress = progress
+        binding.progressText.text = "$progress%"
+
+        // 레벨 계산
+        val level = calculateLevel(checkedCount)
+        binding.homeLevelTv.text = getLevelText(level)
+    }
+
+    private fun calculateLevel(checkedCount: Int): Int {
+        return when {
+            checkedCount >= 30 -> 5
+            checkedCount in 20..29 -> 4
+            checkedCount in 10..19 -> 3
+            checkedCount in 5..9 -> 2
+            else -> 1
+        }
+    }
+
+    private fun getLevelText(level: Int): String {
+        return when (level) {
+            5 -> "마스터 푸른 행성의 수호자 LV.$level"
+            4 -> "울창한 산림의 수호천사 LV.$level"
+            3 -> "든든한 나무의 친구 LV.$level"
+            2 -> "활짝 피어난 환경 운동가 LV.$level"
+            else -> "꼬꼬마 환경 지킴이 LV.$level"
+        }
+    }
     private fun getUserData(userEmail: String) {
         val userRef = firestore.collection("users").document(userEmail)
         userRef.get()

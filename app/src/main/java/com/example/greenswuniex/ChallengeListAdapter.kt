@@ -14,8 +14,10 @@ import com.google.gson.Gson
 class ChallengeListAdapter(
     private val context: Context,
     private val items: MutableList<ChallengeListItem>,
-    private val isHomeFragment: Boolean
+    private val isHomeFragment: Boolean,
+    private val onCheckListener: (Int) -> Unit//콜백추가
 ) : RecyclerView.Adapter<ChallengeListAdapter.ViewHolder>() {
+
 
     inner class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         val checkButton: ImageButton = view.findViewById(R.id.item_check_btn)
@@ -52,11 +54,17 @@ class ChallengeListAdapter(
                 .create()
 
             dialogView.findViewById<Button>(R.id.dialog_button_yes).setOnClickListener {
+                //체크상태 변경
                 item.challenge_onCheck = !item.challenge_onCheck
+                // 체크 상태가 변동된 항목의 체크된 수를 업데이트
+                val checkedCount = items.count { it.challenge_onCheck }
+                onCheckListener(checkedCount) // 체크된 항목 수를 전달
+
                 notifyItemChanged(position)
                 saveItemListToSharedPreferences()
                 dialogBuilder.dismiss()
             }
+
 
             dialogView.findViewById<Button>(R.id.dialog_button_no).setOnClickListener {
                 dialogBuilder.dismiss()

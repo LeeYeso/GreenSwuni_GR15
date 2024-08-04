@@ -36,7 +36,7 @@ class ChallengeCalenderFragment : Fragment() {
         itemList = loadItemListFromSharedPreferences(requireContext())
 
         // 어댑터 생성 및 RecyclerView에 설정
-        adapter = ChallengeListAdapter(requireContext(), itemList, isHomeFragment = false)
+        adapter = ChallengeListAdapter(requireContext(), itemList, isHomeFragment = false){}
         recyclerView.adapter = adapter
 
         // 레이아웃 매니저 설정 (가로 스크롤)
