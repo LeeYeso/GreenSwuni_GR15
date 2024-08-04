@@ -29,7 +29,7 @@
             android:fontFamily="@font/nanum_gothic_bold"
             android:text="찾아보슈는 똑똑한 소비 생활을\n도와주기 위한 상점을 지도를 통해\n확인해 볼 수 있는 기능이에요."
             android:textColor="@color/green_700"
-            android:textSize="18dp" />
+            android:textSize="16dp" />
 
         <TextView
             android:id="@+id/find_comment"
@@ -39,7 +39,7 @@
             android:fontFamily="@font/nanum_gothic_bold"
             android:text="함께 찾아볼까요?"
             android:textColor="#000000"
-            android:textSize="24dp" />
+            android:textSize="22dp" />
 
         <Button
             android:id="@+id/find_button"

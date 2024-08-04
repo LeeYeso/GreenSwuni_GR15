@@ -9,11 +9,15 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.example.greenswuniex.databinding.FragmentHomeBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import java.util.*
 import java.util.concurrent.TimeUnit
+private lateinit var recyclerView: RecyclerView
+private lateinit var adapter: ChallengeListAdapter
+private lateinit var itemList: MutableList<ChallengeListItem>
 
 class HomeFragment : Fragment() {
 
@@ -35,12 +39,15 @@ class HomeFragment : Fragment() {
         firestore = FirebaseFirestore.getInstance()
 
         // RecyclerView 초기화
-        binding.recyclerView.layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
+        recyclerView = binding.recyclerView
+        recyclerView.layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
 
-        // 데이터 리스트 초기화 (추후 실제 데이터를 불러오는 코드로 대체)
-        val dataList = List(20) { "Item ${it + 1}" }
-        val chellengeAdapter = ChellengeRecylclerAdapter(dataList)
-        binding.recyclerView.adapter = chellengeAdapter
+        // 데이터 리스트 초기화
+        itemList = ChallengeCalenderFragment.loadItemListFromSharedPreferences(requireContext())
+
+        // 어댑터 생성 및 RecyclerView에 설정
+        adapter = ChallengeListAdapter(requireContext(), itemList, isHomeFragment = true)
+        recyclerView.adapter = adapter
 
         // 버튼 클릭 리스너 설정
         binding.chellengeBtn.setOnClickListener {

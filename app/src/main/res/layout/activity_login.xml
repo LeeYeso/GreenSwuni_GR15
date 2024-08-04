@@ -23,13 +23,13 @@
         android:layout_gravity="center"
         android:orientation="vertical">
 
-        <!-- 네모 상자 -->
 
 
         <!-- 아이디 입력 필드 -->
         <ImageView
-            android:layout_width="294dp"
+            android:layout_width="290dp"
             android:layout_height="110dp"
+            android:layout_gravity="center"
             android:src="@drawable/greenswuni_text_logo"
             app:layout_constraintStart_toStartOf="@+id/back_button"
             app:layout_constraintTop_toTopOf="@+id/back_button" />

@@ -12,6 +12,9 @@ import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.example.greenswuniex.databinding.FragmentChallengeSelectBinding
 import com.google.firebase.firestore.FirebaseFirestore
+import com.google.gson.Gson
+import com.google.gson.reflect.TypeToken
+import android.content.Context
 
 class ChallengeSelectFragment : Fragment() {
 
@@ -43,11 +46,15 @@ class ChallengeSelectFragment : Fragment() {
         binding.challengeStartBtn.setOnClickListener {
             if (selectedButton != null) {
                 val selectedDetail = selectedButton?.text.toString()
-                val bundle = Bundle().apply {
-                    putString("selectedCategory", argString)
-                    putString("selectedDetail", selectedDetail)
+                if (isChallengeAlreadyAdded(argString, selectedDetail)) {
+                    showAlreadyAddedDialog()
+                } else {
+                    val bundle = Bundle().apply {
+                        putString("selectedCategory", argString)
+                        putString("selectedDetail", selectedDetail)
+                    }
+                    findNavController().navigate(R.id.action_challengeSelect_to_challengeCalender, bundle)
                 }
-                findNavController().navigate(R.id.action_challengeSelect_to_challengeCalender, bundle)
             } else {
                 showConfirmDialog()
             }
@@ -129,5 +136,35 @@ class ChallengeSelectFragment : Fragment() {
         }
 
         dialog.show()
+    }
+
+    private fun showAlreadyAddedDialog() {
+        val dialogView = layoutInflater.inflate(R.layout.confirm_dialog, null)
+        val dialog = AlertDialog.Builder(requireContext())
+            .setView(dialogView)
+            .create()
+
+        val messageTextView = dialogView.findViewById<TextView>(R.id.dlgTvConfirm)
+        val confirmButton = dialogView.findViewById<Button>(R.id.btnConfirm)
+
+        messageTextView.text = "이미 진행 중이거나 완료된 챌린지입니다. 다시 선택해 주세요!"
+
+        confirmButton.setOnClickListener {
+            dialog.dismiss()
+        }
+
+        dialog.show()
+    }
+
+    private fun isChallengeAlreadyAdded(category: String, detail: String): Boolean {
+        val sharedPreferences = requireContext().getSharedPreferences("challenge_prefs",  Context.MODE_PRIVATE)
+        val gson = Gson()
+        val json = sharedPreferences.getString("item_list", null)
+        if (json != null) {
+            val type = object : TypeToken<MutableList<ChallengeListItem>>() {}.type
+            val savedItemList: MutableList<ChallengeListItem> = gson.fromJson(json, type)
+            return savedItemList.any { it.challenge_category == category && it.challenge_name == detail }
+        }
+        return false
     }
 }

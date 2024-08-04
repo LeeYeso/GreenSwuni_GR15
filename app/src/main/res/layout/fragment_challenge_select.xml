@@ -23,7 +23,7 @@
         android:fontFamily="@font/nanum_gothic_bold"
         android:text="원하는 도전을 선택하세요"
         android:textColor="@color/black"
-        android:textSize="24dp" />
+        android:textSize="22dp" />
 
     <Button
         android:id="@+id/challenge_btn1"

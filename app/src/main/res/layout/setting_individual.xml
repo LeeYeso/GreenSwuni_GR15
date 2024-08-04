@@ -59,7 +59,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginTop="4dp"
-        android:fontFamily="@font/nanum_gothic_bold"
+        android:fontFamily="@font/nanum_gothic"
         android:text="현재 2레벨"
         android:textColor="@color/orange_700"
         android:textSize="16dp" />

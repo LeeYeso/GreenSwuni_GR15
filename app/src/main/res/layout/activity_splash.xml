@@ -15,23 +15,23 @@
         android:fontFamily="@font/nanum_gothic_bold"
         android:text="환영합니다!"
         android:textColor="#000000"
-        android:textSize="28dp" />
+        android:textSize="26dp" />
 
     <TextView
         android:id="@+id/welcome_coment"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:textSize="20dp"
+        android:layout_marginTop="15dp"
+        android:textSize="18dp"
         android:text="서울여대 슈니들의 그린 여정,\n그린슈니와 함께 시작하세요."
         android:fontFamily="@font/nanum_gothic_bold"
         android:textColor="@color/green_700"/>
 
     <ImageView
-        android:layout_width="170dp"
-        android:layout_height="170dp"
+        android:layout_width="160dp"
+        android:layout_height="160dp"
         android:src="@drawable/main_logo"
-        android:layout_margin="100dp" />
+        android:layout_margin="95dp" />
 
     <Button
         android:id="@+id/start_button"

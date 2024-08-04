@@ -21,7 +21,8 @@
         android:layout_height="wrap_content"
         android:gravity="center"
         android:text="* 확인을 누른 후에는 되돌릴 수 없습니다."
-        android:fontFamily="@font/nanum_gothic_bold"
+        android:paddingTop="5dp"
+        android:fontFamily="@font/nanum_gothic"
         android:textSize="16dp" />
 
     <LinearLayout
@@ -29,7 +30,7 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:gravity="center_horizontal"
-        android:layout_margin="5dp">
+        android:layout_margin="10dp">
 
         <Button
             android:id="@+id/dialog_button_yes"
