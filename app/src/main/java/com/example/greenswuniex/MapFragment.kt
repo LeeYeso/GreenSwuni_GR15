@@ -396,16 +396,6 @@ class MapFragment : Fragment(), OnMapReadyCallback {
         }
     }
 
-    private fun getAddressForMarker(marker: Marker): String {
-        // 실제 주소를 반환하는 로직을 추가하세요
-        return "Address Placeholder"
-    }
-
-    private fun getCategoryForMarker(marker: Marker): String {
-        // 실제 카테고리를 반환하는 로직을 추가하세요
-        return "Category Placeholder"
-    }
-
     private fun showMarkers(type: String) {
         when (type) {
             "food" -> {
