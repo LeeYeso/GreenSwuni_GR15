@@ -1,9 +1,11 @@
 package com.example.greenswuniex
 
+import android.app.AlertDialog
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.ImageButton
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
@@ -28,9 +30,34 @@ class ChallengeListAdapter(private val context: Context, private val items: List
         holder.categoryTextView.text = item.challenge_category
         holder.nameTextView.text = item.challenge_name
 
+
+        // 체크했을경우 다시 체크 불가능
+        holder.checkButton.isEnabled = !item.challenge_onCheck
+
         holder.checkButton.setOnClickListener {
-            item.challenge_onCheck = !item.challenge_onCheck
-            notifyItemChanged(position)
+            val dialogView = LayoutInflater.from(context).inflate(R.layout.select_dialog, null)
+            val dialogBuilder = AlertDialog.Builder(context)
+                .setView(dialogView)
+                .create()
+            // Set click listeners for the dialog buttons
+            dialogView.findViewById<Button>(R.id.dialog_button_yes).setOnClickListener {
+                item.challenge_onCheck = !item.challenge_onCheck
+                if (item.challenge_onCheck) {
+
+
+                    // item.challengeCount += 1
+                } else {
+                    // item.challengeCount -= 1
+                }
+                notifyItemChanged(position)
+                dialogBuilder.dismiss()
+            }
+
+            dialogView.findViewById<Button>(R.id.dialog_button_no).setOnClickListener {
+                dialogBuilder.dismiss()
+            }
+
+            dialogBuilder.show()
         }
     }
 
