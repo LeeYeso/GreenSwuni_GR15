@@ -22,7 +22,6 @@ class SettingFragment : Fragment() {
         val view = inflater.inflate(R.layout.fragment_setting, container, false)
 
         individualBtn = view.findViewById(R.id.setting_individual_btn)
-        accountBtn = view.findViewById(R.id.setting_account_btn)
 
         individualBtn.setOnClickListener {
             findNavController().navigate(R.id.action_setting_to_individual)

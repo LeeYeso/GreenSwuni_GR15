@@ -60,30 +60,4 @@
         android:layout_height="2dp"
         android:background="#E2E1E1" />
 
-
-    <Button
-        android:id="@+id/setting_account_btn"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="30dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginRight="30dp"
-        android:background="#00FFFFFF"
-        android:drawableRight="@drawable/enter_arrow_lg"
-        android:fontFamily="@font/nanum_gothic_bold"
-        android:shadowRadius="0"
-        android:stateListAnimator="@null"
-        android:textColor="#000000"
-        android:text="계정 관리"
-        android:textSize="16dp"
-        android:textAlignment="viewStart" />
-    <View
-        android:id="@+id/view2"
-        android:layout_width="match_parent"
-        android:layout_height="2dp"
-        android:layout_marginLeft="30dp"
-        android:layout_marginRight="30dp"
-        android:background="#E2E1E1"
-        tools:layout_editor_absoluteX="0dp" />
-
 </LinearLayout>
