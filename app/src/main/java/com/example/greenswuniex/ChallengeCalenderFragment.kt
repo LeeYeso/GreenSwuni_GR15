@@ -1,5 +1,6 @@
 package com.example.greenswuniex
 
+import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -9,6 +10,8 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.google.gson.Gson
+import com.google.gson.reflect.TypeToken
 import com.prolificinteractive.materialcalendarview.MaterialCalendarView
 
 class ChallengeCalenderFragment : Fragment() {
@@ -46,6 +49,9 @@ class ChallengeCalenderFragment : Fragment() {
         val selectedCategory = arguments?.getString("selectedCategory")
         val selectedDetail = arguments?.getString("selectedDetail")
 
+        // 저장된 데이터 복원
+        loadItemListFromSharedPreferences()
+
         if (selectedCategory != null && selectedDetail != null) {
             addItemToRecyclerView(selectedCategory, selectedDetail)
         }
@@ -56,6 +62,34 @@ class ChallengeCalenderFragment : Fragment() {
         }
 
         return view
+    }
+    // 프래그먼트가 일시 정지 상태로 전환될 때 호출됨
+    override fun onPause() {
+        super.onPause()
+        saveItemListToSharedPreferences()
+    }
+
+    // SharedPreferences에 itemList 저장
+    private fun saveItemListToSharedPreferences() {
+        val sharedPreferences = requireContext().getSharedPreferences("challenge_prefs", Context.MODE_PRIVATE)
+        val editor = sharedPreferences.edit()
+        val gson = Gson()
+        val json = gson.toJson(itemList)
+        editor.putString("item_list", json)
+        editor.apply()
+    }
+    // SharedPreferences에서 itemList 불러오기
+    private fun loadItemListFromSharedPreferences() {
+        val sharedPreferences = requireContext().getSharedPreferences("challenge_prefs", Context.MODE_PRIVATE)
+        val gson = Gson()
+        val json = sharedPreferences.getString("item_list", null)
+        if (json != null) {
+            val type = object : TypeToken<MutableList<ChallengeListItem>>() {}.type
+            val savedItemList: MutableList<ChallengeListItem> = gson.fromJson(json, type)
+            itemList.clear()
+            itemList.addAll(savedItemList)
+            adapter.notifyDataSetChanged()
+        }
     }
 
     private fun addItemToRecyclerView(category: String, detail: String) {
