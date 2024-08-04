@@ -79,5 +79,6 @@ dependencies {
     implementation("androidx.navigation:navigation-ui-ktx:2.7.7")
 
     implementation( "androidx.recyclerview:recyclerview:1.2.1")
-
+    implementation("androidx.recyclerview:recyclerview-selection:1.1.0")
+    implementation("androidx.cardview:cardview:1.0.0")
 }

@@ -1,5 +1,6 @@
 package com.example.greenswuniex
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -47,7 +48,8 @@ class HomeFragment : Fragment() {
         }
 
         binding.searchBtn.setOnClickListener {
-            findNavController().navigate(R.id.action_home_to_search)
+            val intent = Intent(requireContext(), FavoritePlacesActivity::class.java)
+            startActivity(intent)
         }
 
         // 사용자 데이터 불러오기 및 사용 일 수 계산
